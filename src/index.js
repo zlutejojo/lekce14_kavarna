@@ -11,6 +11,15 @@ import Order from "./Order";
   dataStore.loadData()
     .then(() => {
       products.render();
+      //aby při prvním spuštění se taky vykreslilo, že je objednávka prázdná
+      order.update();
+      //pridam funci 
+      document.querySelector('#order-btn').addEventListener('click', () => {
+        order.send();
+      }
+
+
+      )
     });
 
 })();
